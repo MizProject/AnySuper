@@ -46,16 +46,17 @@ show_progress() {
 
 
 umount_all() {
-  umount /system_root
-  umount /vendor
-  umount /data
-  umount /odm
-  umount /product
+  ( if [ -d /system_root -a ! -f /system/build.prop ]; then
+     umount /system_root;
+  fi;
+   umount /vendor;
+   umount /data;
+   umount /product;) 2>/dev/null;
 }
 
 abort() {
   ui_say "$*"
-  rm -rf $home
+  cleanup
   umount_all
   exit 1
 }
@@ -74,12 +75,12 @@ umount_all
 mount_data
 
 
-
+mkdir -p $home
 cd $home
 
 unzip -o "$zipfile" 
 if [ $? != 0 -o ! "$(ls super.img)" ] || [ $? != 0 -o ! "$(ls tools)" ] ; then
-  abort "Unzip failed. Aborting...";
-fi;
+  abort "Unzip failed. Aborting..."
+fi
 
 

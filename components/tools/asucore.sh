@@ -25,13 +25,13 @@ abort() {
     exit 1
 }
 
-mnt_test() {
-    mount  $byuserdata /data
-    ex=$?
-    if [ $ex != '0' ]; then
-        abort "Cannot mount data. Please try to format it by setting the filesystem from f2fs to ext4 and f2fs again (since Most android roms dont natively support ext4)"
-    fi
-}
+# mnt_test() {
+#     mount  $byuserdata /data
+#     ex=$?
+#     if [ $ex != '0' ]; then
+#         abort "Cannot mount data. Please try to format it by setting the filesystem from f2fs to ext4 and f2fs again (since Most android roms dont natively support ext4)"
+#     fi
+# }
 
 sizedt() {
   if [ "$(ls -nl $home/super.img | awk '{print $5}')" -lt 238100 ]; then
@@ -50,5 +50,20 @@ flash() {
   fi
 }
 
+mass_umount() {
+  umount /system_root
+  umount /data
+  umount /odm
+  umount /vendor
+  umount /product
+}
 
+userdata_rmount() {
+  mount -t auto -o rw /dev/block/by-name/userdata /data
+}
+
+start(){
+  sizedt
+  flash
+}
 

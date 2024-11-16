@@ -7,8 +7,11 @@
 . tools/asucore.sh
 
 
+ui_print "Installing super.img"
 
+userdata_rmount
 
+start
 
 
 
