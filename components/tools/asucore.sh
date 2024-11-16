@@ -1,14 +1,14 @@
 #!/sbin/sh
 
 # Anysuper by Mizumo-prjkt and the Org. MizPrjkt (MizProject)
-# Do not Modify
+# Do not Modify unless specified
 
 # This version is in testing
 
 home=/data/anysuper
-block=/dev/block/mmcblk0
-bysuper=/dev/block/by-name/super
-byuserdata=/dev/block/by-name/userdata
+block=/dev/block/mmcblk0 # Modify this
+bysuper=/dev/block/by-name/super # Modify this
+byuserdata=/dev/block/by-name/userdata # Modify this
 ofd=$1
 
 
@@ -49,7 +49,6 @@ flash() {
     abort "not enough size"
   fi
 }
-
 
 
 

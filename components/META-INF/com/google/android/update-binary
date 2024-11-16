@@ -1,6 +1,11 @@
 #!/sbin/sh
 # AnySuper by @Mizumo-prjkt
-# Whole thing is custom license, read the license agreement to use this
+# Some parts of the component are coming from AnyKernel but has been modified to
+# fit its needs of this project
+# This project uses a custom license
+
+# Third party acknowledgements
+## osm0sis @ xda-developers
 
 # This version is in testing
 
@@ -9,6 +14,7 @@ block=/dev/block/mmcblk0
 partid="$(sgdisk --print $block | grep userdata | awk '{print $1}')"
 ofd=/proc/self/fd/$2
 zipfile=$3
+
 
 
 ui_say() {
@@ -55,8 +61,19 @@ abort() {
 }
 
 
+if [ -f notes ]; then
+  ui_print " ";
+  while IFS='' read -r line || $bb [[ -n "$line" ]]; do
+    ui_print "$line";
+  done < notes;
+  ui_print " ";
+fi;
+
+show_progress 1.34 4
 umount_all
 mount_data
+
+
 
 cd $home
 

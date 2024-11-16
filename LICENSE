@@ -1,0 +1,101 @@
+# Here are the lists of Licenses of AnySuper
+
+## MizLicense Controlled License v1
+
+    MizLicense Controlled License Agreement v1
+    For @Mizumo-prjkt and MizProject/MizPrjkt as a whole
+
+    - Open Source License
+
+    This software, including its source code and finished product, is freely available for anyone to copy and use.
+
+    - Modifications and Repository Management
+
+    Any modifications to the repository that are not planned to be merged into the main repository must be clearly communicated to the public. Users must be aware of the differences between the main repository and any forked versions.
+
+    - Inclusion of Other Open Source Projects
+
+    This software may include other open source licensed projects. Users will be informed about these bundled projects and their respective licenses. Any other open source project that has a license prohibiting cross-licensing (i.e., being bundled with other projects) should not be included.
+
+    - Warranty Disclaimer
+
+    The software and its source code are provided "as is," without any warranty of any kind, express or implied. The use of the software is at the user's own risk.
+
+    - Commercial Use Notification and Approval
+
+    Any commercial entity planning to use the whole or part of the software must notify the owner before doing so. This includes, but is not limited to, modifications, integrations, or distribution of the software.
+
+    The owner reserves the right to allow or disallow the commercial use of the software. Commercial entities must obtain explicit permission from the owner for any such use.
+
+    - Impact of Incorporating Other Projects
+
+    If this software includes components from other open source projects, the entire project developed by the owner may be subject to the terms and conditions of those incorporated projects. 
+
+    This means that certain protections and restrictions may no longer apply, and commercial entities may have access to the software under the terms of the included projects’ licenses. The owner cannot set fees or prevent commercial use if it conflicts with the included projects' licenses.
+
+    If the included open source projects have the same license as this software, the owner retains the ability to protect against commercial use by any entity opposed by the owner. The protections against commercial entities, where the owner opposes such use, are still active.
+
+> Note: Protections from mentioned clause of Commercial use, that meant to protect this project from Commercial use has no effect as it has used a project that uses a third-party component
+
+
+# Third Party Licenses
+
+## AnyKernel3 (AK3), and AnyKernel2/AnyKernel 2.0 (AK2) Scripts License:
+
+https://github.com/osm0sis/AnyKernel3?tab=License-1-ov-file#readme:~:text=AnyKernel3%20(AK3)%2C%20and%20AnyKernel2/AnyKernel%202.0%20(AK2)%20Scripts%20License%3A
+
+    AnyKernel (versions 2.0/2 and later) Android image modifying scripts.
+    Copyright (c) 2019 Chris Renshaw (osm0sis @ xda-developers),
+    and additional contributors per readily available commit history/credits.
+    All rights reserved.
+
+    Redistribution and use in source and binary forms, with or without
+    modification, are permitted (subject to the limitations in the disclaimer
+    below) provided that the following conditions are met:
+
+       * Redistributions of source code must retain the above copyright notice,
+         this list of conditions and the following disclaimer.
+
+       * Redistributions in binary form must reproduce the above copyright
+         notice, this list of conditions and the following disclaimer in the
+         documentation and/or other materials provided with the distribution.
+
+       * Neither the name of the copyright holder nor the names of its
+         contributors may be used to endorse or promote products derived from this
+         software without specific prior written permission.
+
+    NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE GRANTED BY
+    THIS LICENSE. THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND
+    CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+    LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+    PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR
+    CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+    EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+    PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+    BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER
+    IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+    ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+    POSSIBILITY OF SUCH DAMAGE.
+
+    
+    Components its using:
+    some parts of update-binary, updater-script, anysuper.sh and asucore.sh
+
+## LZ4 
+
+https://github.com/lz4/lz4/blob/dev/LICENSE - As of 16th of Nov. 2024
+
+    This repository uses 2 different licenses :
+
+    - all files in the `lib` directory use a BSD 2-Clause license
+    - all other files use a GPL-2.0-or-later license, unless explicitly stated otherwise
+
+    Relevant license is reminded at the top of each source file,
+    and with presence of COPYING or LICENSE file in associated directories.
+
+    This model is selected to emphasize that
+    files in the `lib` directory are designed to be included into 3rd party applications,
+    while all other files, in `programs`, `tests` or `examples`,
+    are intended to be used "as is", as part of their intended scenarios,
+    with no intention to support 3rd party integration use cases.
+
