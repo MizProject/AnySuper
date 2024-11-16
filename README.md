@@ -20,7 +20,9 @@ Down with the use of Odin and try AnySuper now, surely this will benefit the use
 
     AnySuper will add `anysuper` folder to `/data` to allow the package installer to install super image properly
 
-- An SDCard (16GB minimum)
+- An SDCard (16GB minimum) (optional, for selecting the zip file in Install ZIP )
+
+- Or if you don't have an SDCard, probably a computer with adb for sideload
 
 
 
