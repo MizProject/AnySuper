@@ -10,7 +10,7 @@ Banners:
 
 ---
 
-This project was inspired by: AnyKernel Project, by putting modified super images, you can run any android roms on your device.
+This project was inspired by: AnyKernel Project instead by putting kernels, it's now putting modified super images, you can run any android roms on your device.
 
 Down with the use of Odin and try AnySuper now, surely this will benefit the users who don't have a PC to try mod their devices and only have an SDCard and your phone to begin with (Although ADB sideloading has been untested)
 
