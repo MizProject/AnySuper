@@ -24,5 +24,8 @@ Down with the use of Odin and try AnySuper now, surely this will benefit the use
 
 - Or if you don't have an SDCard, probably a computer with adb for sideload
 
+## Third Party Components
 
+- [AnyKernel3](https://github.com/osm0sis/AnyKernel3)
+- [lz4](https://github.com/lz4/lz4)
 
