@@ -155,6 +155,8 @@ jobs:
                   Note: If there's nothing here, visit the SFTP Hosting website set by the repo maintainer:
                     ${{secrets.SFTP_WEBPROJECT}}
                     if that's also empty then means this is private or please contact the repo owner
+              env: 
+                GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
             - name: Deploy to SFTP server
               uses: pressidium/lftp-mirror-action@v1
               with:
