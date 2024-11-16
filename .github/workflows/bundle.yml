@@ -1,0 +1,69 @@
+name: Bundle Super Images to Zip (Non-sourceforge Edition)
+
+on:
+    workflow_dispatch:
+        inputs:
+            LINK_TAR:
+                description: 'Link to the Super.img in TAR'
+                required: false
+            LINK_XZ:
+                description: 'Link to the Super.img in TAR.XZ'
+                required: false
+            LINK:
+                description: 'Link to the Super.img only'
+                required: false
+            COMPRESSION_LEVEL:
+                required: true
+                default: 'default'
+                type: choice
+                options:
+                    - 'default'
+                    - 'less'
+                    - 'intense'
+            NAME_REL:
+                description: 'Enter name for Github Release'
+                required: true
+
+jobs:
+    Packing-up:
+        if: github.event.repository.owner.id == github.event.sender.id
+        runs-on: ubuntu-latest
+        permissions:
+            contents: write
+        steps:
+
+            - name: Display Session Parameters, for Debugging
+              run: |
+                echo "Debug:"
+                echo "Link (tar): ${{github.event.inputs.LINK}}"
+                echo "Compression Level: ${{github.event.inputs.COMPRESSION_LEVEL}}"
+                echo "NAME_REL: ${{github.event.inputs.NAME_REL}}"
+            - name: Check out
+              uses: actions/checkout@v3
+            - name: Clean Bloated Environment
+              uses: rokibhasansagar/slimhub_actions@main
+            - name: Prepare everything
+              run: |
+                sudo apt update
+                sudo apt upgrade -y
+                sudo apt install unzip aria2 zip
+                realpath . > dir.txt
+            - name: Fetch Files - TAR
+              if: |
+                github.event.inputs.LINK_TAR != null && github.event.inputs.LINK_XZ == null && github.event.inputs.LINK == null
+              run: |
+                aria2c "${{github.event.inputs.LINK}}" -o "target.tar"
+                pwd > dir
+            - name: Fetch Files - XZ
+              if: |
+                github.event.inputs.LINK_TAR == null && github.event.inputs.LINK_XZ != null && github.event.inputs.LINK == null
+              run: |
+                aria2c "${{github.event.inputs.LINK}}" -o "target.tar.xz"
+                pwd > dir
+            - name: Fetch Files - img
+              if: |
+                github.event.inputs.LINK_TAR == null && github.event.inputs.LINK_XZ == null && github.event.inputs.LINK != null
+              run: |
+                aria2c "${{github.event.inputs.LINK}}" -o "target.img"
+                pwd > dir
+            

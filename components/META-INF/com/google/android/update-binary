@@ -1,0 +1,68 @@
+#!/sbin/sh
+# AnySuper by @Mizumo-prjkt
+# Whole thing is custom license, read the license agreement to use this
+
+# This version is in testing
+
+home=/data/anysuper
+block=/dev/block/mmcblk0
+partid="$(sgdisk --print $block | grep userdata | awk '{print $1}')"
+ofd=/proc/self/fd/$2
+zipfile=$3
+
+
+ui_say() {
+  until [ ! "$1" ]; do 
+    echo -e "ui_print $1\nui_print" > $ofd;
+    shift;
+  done;
+}
+
+mount_data() {
+  mount $block$partid /data
+  ex=$?
+  if [ $ex == 0 ]; then
+    ui_say "Mounted /data"
+    mkdir $home
+  else 
+    abort "Could not mount /data, exiting"
+  fi
+}
+
+cleanup() {
+  rm -rf $home
+}
+
+show_progress() { 
+  echo "progress $1 $2" > $ofd; 
+}
+
+
+
+umount_all() {
+  umount /system_root
+  umount /vendor
+  umount /data
+  umount /odm
+  umount /product
+}
+
+abort() {
+  ui_say "$*"
+  rm -rf $home
+  umount_all
+  exit 1
+}
+
+
+umount_all
+mount_data
+
+cd $home
+
+unzip -o "$zipfile" 
+if [ $? != 0 -o ! "$(ls super.img)" ] || [ $? != 0 -o ! "$(ls tools)" ] ; then
+  abort "Unzip failed. Aborting...";
+fi;
+
+
