@@ -58,12 +58,12 @@ mass_umount() {
   umount /product
 }
 
-userdata_rmount() {
-  mount -t auto -o rw /dev/block/by-name/userdata /data
+super_umount() {
+  umount /system_root
+  umount /odm
+  umount /vendor
+  umount /product
 }
 
-start(){
-  sizedt
-  flash
-}
+
 

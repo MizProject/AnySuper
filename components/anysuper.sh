@@ -9,12 +9,12 @@
 
 ui_print "Installing super.img"
 
-userdata_rmount
+ui_print "Measuring"
 
-start
+sizedt
 
 
-
+super_umount
 
 # Deepsleep fix (@Chainfire)
 for i in `ls /sys/class/scsi_disk/`; do
@@ -23,3 +23,14 @@ for i in `ls /sys/class/scsi_disk/`; do
 		echo 'temporary none' > /sys/class/scsi_disk/$i/cache_type
 	fi
 done;
+
+super_umount
+
+ui_print "Installing"
+
+flash
+
+ui_print "Done"
+ui_print ""
+
+# End

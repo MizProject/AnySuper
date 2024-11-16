@@ -26,6 +26,6 @@ Down with the use of Odin and try AnySuper now, surely this will benefit the use
 
 ## Third Party Components
 
-- [AnyKernel3](https://github.com/osm0sis/AnyKernel3)
+- [AnyKernel3](https://github.com/osm0sis/AnyKernel3) (incl. deepsleep fix on its integration)
 - [lz4](https://github.com/lz4/lz4)
 
